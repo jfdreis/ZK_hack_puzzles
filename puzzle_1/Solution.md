@@ -21,7 +21,9 @@ Thanks to what we did above, given a message $m$, if we can write $b(m)$ as a li
 
 For $i=1,2,\ldots, 256$ we will write $b(m_i)$ as a column vector:
 
-$b(m_i)=$ $|b_1(m_i)|
-|b_2(m_i)|
-|\vdots|
-|b_{256}(m_i)|$
+$b(m_i) = \begin{bmatrix}
+b_1(m_i) \\
+b_2(m_i) \\
+\vdots \\
+b_{256}(m_i)
+\end{bmatrix}$
