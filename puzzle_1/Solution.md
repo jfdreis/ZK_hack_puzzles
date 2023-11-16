@@ -12,7 +12,7 @@ We deduce that $h(11)=g_1+g_2$.
 
 This suggests that if we are given some pedersen hashes of $n$-bit messages, we can compute the pedersen hash of some linear combination of those $n$-bit messages.
 
-Regarding the signatures. Note that given $g$ and $h$ in a group $G$ with signatures $s_g=sk \cdot g $ and $s_h=sk \cdot h$ one has that the signature of $g+h$ is:
+Regarding the signatures. Note that given $g$ and $h$ in a group $G$ with signatures $s_g=sk \cdot g$ and $s_h=sk \cdot h$ one has that the signature of $g+h$ is:
 
 $s_{g+h}=sk \cdot (g+h)=sk \cdot g + sk \cdot h = s_g+s_h$.
 
@@ -30,7 +30,7 @@ Given a message $m$ let us assume that $b(m)$ can be written as a linear combina
 
 That is, let $a_1, a_2, \ldots, a_{256}$ in $\mathbb{Z}_r$ and assume $b(m)=\sum_{j=1}^{256}a_jb(m_j)$. Hence, $b_i(m)=\sum_{j=1}^{256}a_jb_i(m_j)$. We claim that $s_m=\sum_{j=1}^{256}a_j s_j$. Indeed: 
 
-The Pedersen hash of $b(m)$ is $\sum\limits__{i=1}^{256} b_i(m) g_i = \sum_{i=1}^{256} \Big(\sum_{j=1}^{256}a_jb_i(m_j)\Big) g_i$.
+The Pedersen hash of $b(m)$ is $\sum\limits_{i=1}^{256} b_i(m) g_i = \sum_{i=1}^{256} \Big(\sum_{j=1}^{256}a_jb_i(m_j)\Big) g_i$.
 Note also that $s_j=sk \cdot \sum_{j=1}^{256} b_i(m_j)g_i$.
 
 Hence,
