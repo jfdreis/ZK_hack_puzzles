@@ -28,7 +28,7 @@ Note that we can define sum of these vectors (coordinate wise) and multiplicatio
 
 Given a message $m$ let us assume that $b(m)$ can be written as a linear combination of $b(m_i)$, with scalars in $\mathbb{Z}_r$.
 
-That is, let $a_1,a_2,\ldots,a_{256} \in \mathbb{Z}_r$ and assume $b(m)={\sum_{j=1}}^{256}a_jb(m_j)$. Hence, $b_i(m)=\sum_{j=1}^{256}a_jb_i(m_j)$. We claim that $s_m=\sum_{j=1}^{256}a_j s_j$. Indeed: 
+That is, let $a_1, a_2, \ldots, a_{256}$ in $\mathbb{Z}_r$ and assume $b(m)={\sum_{j=1}}^{256}a_jb(m_j)$. Hence, $b_i(m)=\sum_{j=1}^{256}a_jb_i(m_j)$. We claim that $s_m=\sum_{j=1}^{256}a_j s_j$. Indeed: 
 
 The Pedersen hash of $b(m)$ is $\sum_{i=1}^{256} b_i(m) g_i = \sum_{i=1}^{256} \Big(\sum_{j=1}^{256}a_jb_i(m_j)\Big) g_i$.
 Note also that $s_j=sk \cdot \sum_{j=1}^{256} b_i(m_j)g_i$.
