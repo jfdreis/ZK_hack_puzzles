@@ -6,7 +6,8 @@ We assume that some familiarity on BLS signature and Pedersen Hashes, b will sta
 
 Think about a pedersen hash of a 2-bit message space - 01 and 10. Can you deduce another hash? Are tools from linear algebra useful to find a pedersen hash on an arbitrary message without hashing directly? Can you also use the linear structure of BLS signatures on the signatures themselves?
 
-Let $h_1=h(01)=0g_1 + 1g_2=g_1$ and $h_2=h(10)=1g_1 + 0g_2= g_1$. 
+Let $h_1=h(01)=0g_1 + 1g_2=g_1$ and $h_2=h(10)=1g_1 + 0g_2= g_1$.
+
 We deduce that $h(11)=g_1+g_2$.
 
 This suggests that if we are given some pedersen hashes of $n$-bit messages, we can compute the pedersen hash of some linear combination of those $n$-bit messages.
@@ -21,13 +22,13 @@ Thanks to what we did above, given a message $m$, if we can write $b(m)$ as a li
 
 For $i=1,2,\ldots, 256$ we will write $b(m_i)$ as a column vector $b(m_i) = [b_1(m_i)], [b_2(m_i)], \vdots, [b_{256}(m_i)]$.
 
-Note that we can define sum of these vectors (coordinate wise) and multiplication by a scalar in $\mathbb(Z)_r$.
+Note that we can define sum of these vectors (coordinate wise) and multiplication by a scalar in $\mathbb{Z}_r$.
 
 ## Guessing the signature of a message m
 
-Given a message $m$ let us assume that $b(m)$ can be written as a linear combination of $b(m_i)$, with scalars in $\mathbb(Z)_r$.
+Given a message $m$ let us assume that $b(m)$ can be written as a linear combination of $b(m_i)$, with scalars in $\mathbb{Z}_r$.
 
-That is, let $a_1,a_2,\ldots,a_{256} \in \mathbb(Z)_r$ and assume $b(m)={\sum_{j=1}}^{256}</sup>a_jb(m_j)$. Hence, $b_i(m)=\sum_{j=1}^{256}a_jb_i(m_j)$. We claim that $s_m=\sum_{j=1}^{256}a_j s_j$. Indeed: 
+That is, let $a_1,a_2,\ldots,a_{256} \in \mathbb{Z}_r$ and assume $b(m)={\sum_{j=1}}^{256}a_jb(m_j)$. Hence, $b_i(m)=\sum_{j=1}^{256}a_jb_i(m_j)$. We claim that $s_m=\sum_{j=1}^{256}a_j s_j$. Indeed: 
 
 The Pedersen hash of $b(m)$ is $\sum_{i=1}^{256} b_i(m) g_i = \sum_{i=1}^{256} \Big(\sum_{j=1}^{256}a_jb_i(m_j)\Big) g_i$.
 Note also that $s_j=sk \cdot \sum_{j=1}^{256} b_i(m_j)g_i$.
