@@ -19,7 +19,7 @@ $s_{g+h}=sk \cdot (g+h)=sk \cdot g + sk \cdot h = s_g+s_h$.
 
 Thanks to what we did above, given a message $m$, if we can write $b(m)$ as a linear combination of $b(m_i)$ one can determine the signature of $m$.
 
-For $i=1,2,\ldots, 256$ we will write $b(m_i)$ as a column vector $b(m_i) = [b_1(m_i)], [b_2(m_i)], \vdots [b_{256}(m_i)]$.
+For $i=1,2,\ldots, 256$ we will write $b(m_i)$ as a column vector $b(m_i) = [b_1(m_i)], [b_2(m_i)], \vdots, [b_{256}(m_i)]$.
 
 Note that we can define sum of these vectors (coordinate wise) and multiplication by a scalar in $\mathbb(Z)_r$.
 
@@ -27,17 +27,17 @@ Note that we can define sum of these vectors (coordinate wise) and multiplicatio
 
 Given a message $m$ let us assume that $b(m)$ can be written as a linear combination of $b(m_i)$, with scalars in $\mathbb(Z)_r$.
 
-That is, let $a_1,a_2,\ldots,a_{256} \in \mathbb(Z)_r$ and assume $b(m)=\sum_{j=1}^{256}a_jb(m_j)$. Hence, $b_i(m)=\sum_{j=1}^{256}a_jb_i(m_j)$. We claim that $s_m=\sum_{j=1}^{256}a_j s_j$. Indeed: 
+That is, let $a_1,a_2,\ldots,a_{256} \in \mathbb(Z)_r$ and assume $b(m)=\sum_{j=1}<sup>256</sup>a_jb(m_j)$. Hence, $b_i(m)=\sum_{j=1}^{256}a_jb_i(m_j)$. We claim that $s_m=\sum_{j=1}^{256}a_j s_j$. Indeed: 
 
 The Pedersen hash of $b(m)$ is $\sum_{i=1}^{256} b_i(m) g_i = \sum_{i=1}^{256} \Big(\sum_{j=1}^{256}a_jb_i(m_j)\Big) g_i$.
 Note also that $s_j=sk \cdot \sum_{j=1}^{256} b_i(m_j)g_i$.
 
 Hence,
-$s_m=sk \cdot \sum_{i=1}^{256} b_i(m) g_i=
-    =sk \cdot \sum_{i=1}^{256} \Big(\sum_{j=1}^{256}a_jb_i(m_j)\Big) g_i=
-    =sk \cdot \sum_{i=1}^{256} \sum_{j=1}^{256} a_jb_i(m_j) g_i=
-    =sk \cdot \sum_{j=1}^{256} \sum_{i=1}^{256} a_jb_i(m_j) g_i=
-    =\sum_{j=1}^{256} a_j sk \cdot \Big(\sum_{i=1}^{256} b_i(m_j) g_i\Big)= 
+$s_m=sk \cdot \sum_{i=1}^{256} b_i(m) g_i=\\
+    =sk \cdot \sum_{i=1}^{256} \Big(\sum_{j=1}^{256}a_jb_i(m_j)\Big) g_i=\\
+    =sk \cdot \sum_{i=1}^{256} \sum_{j=1}^{256} a_jb_i(m_j) g_i=\\
+    =sk \cdot \sum_{j=1}^{256} \sum_{i=1}^{256} a_jb_i(m_j) g_i=\\
+    =\sum_{j=1}^{256} a_j sk \cdot \Big(\sum_{i=1}^{256} b_i(m_j) g_i\Big)= \\
     =\sum_{j=1}^{256} a_j s_j$
 
 as we expected.
@@ -50,4 +50,4 @@ $a_1b_1(m_1)+a_2b_1(m_2)+\cdots+ a_{256}b_1(m_{256})=b_1(m)
 
 So, let $A=[[b_1(m_1),b_1(m_2), \cdots, b_1(m_{256})], [b_2(m_1),b_2(m_2), \cdots, b_2(m_{256})],\vdots, [ b_{256}(m_1), b_{256}(m_2), \cdots, b_{256}(m_{256})]]$, $x=[[a_1],[a_2],\vdots, [a_{256}]]$ and $b=[[b_1(m)],[b_2(m)],\vdots, [b_{256}(m)]]$.
 
-Consequently, if $A$ is invertible, the solution is: x=A^{-1}b.
+Consequently, if $A$ is invertible, the solution is: $x=A^{-1}b$.
