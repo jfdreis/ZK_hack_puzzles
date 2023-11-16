@@ -32,7 +32,6 @@ That is, let $a_1, a_2, \ldots, a_{256}$ in $\mathbb{Z}_r$ and assume $b(m)=\sum
 
 The Pedersen hash of $b(m)$ is $\sum\limits_{i=1}^{256} b_i(m) g_i = \sum\limits_{i=1}^{256} \Big(\sum\limits_{j=1}^{256}a_jb_i(m_j)\Big) g_i$.
 Note also that $s_j=sk \cdot \sum\limits_{j=1}^{256} b_i(m_j)g_i$.
-
 Hence,
 $$
     s_m=sk \cdot \sum\limits_{i=1}^{256} b_i(m) g_i=
@@ -51,9 +50,12 @@ as we expected.
 
 So, to solve this challenge, given a message $m$ we just need to find $a_1,\ldots, a_{256}$ in $\mathbb{Z}_r$ such that $b(m)=\sum\limits_{j=1}^{256}a_jb(m_j)$. This reduces to a linear system of 256 equations and 256 variables.
 $$
-    a_1b_1(m_1)+a_2b_1(m_2)+ \cdots + a_{256}b_1(m_{256})=b_1(m)\\
-    a_1b_2(m_1)+a_2b_2(m_2)+\cdots+ a_{256}b_2(m_{256})=b_2(m)\\
-    \vdots\\
+    a_1b_1(m_1)+a_2b_1(m_2)+ \cdots + a_{256}b_1(m_{256})=b_1(m)
+
+    a_1b_2(m_1)+a_2b_2(m_2)+\cdots+ a_{256}b_2(m_{256})=b_2(m)
+
+    \vdots
+
     a_1b_{256}(m_1)+a_2b_{256}(m_2)+\cdots+ a_{256}b_{256}(m_{256})=b_1(m)$$
 
 So, let $A=[ [b_1(m_1),b_1(m_2), \cdots, b_1(m_{256})] , [b_2(m_1),b_2(m_2), \cdots, b_2(m_{256})] ,\vdots, [b_{256}(m_1), b_{256}(m_2), \cdots, b_{256}(m_{256})] ]$, $x=[[a_1],[a_2],\vdots, [a_{256}]]$ and $b=[[b_1(m)],[b_2(m)],\vdots, [b_{256}(m)]]$.
